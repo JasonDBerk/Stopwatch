@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		176E43F017C95ABA004CB040 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176E43EF17C95ABA004CB040 /* QuartzCore.framework */; };
 		17B2581A17BD9C87007F9A9A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B2581917BD9C87007F9A9A /* UIKit.framework */; };
 		17B2581C17BD9C87007F9A9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B2581B17BD9C87007F9A9A /* Foundation.framework */; };
 		17B2581E17BD9C87007F9A9A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B2581D17BD9C87007F9A9A /* CoreGraphics.framework */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		176E43EF17C95ABA004CB040 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		17B2581617BD9C87007F9A9A /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B2581917BD9C87007F9A9A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17B2581B17BD9C87007F9A9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				176E43F017C95ABA004CB040 /* QuartzCore.framework in Frameworks */,
 				17B2581A17BD9C87007F9A9A /* UIKit.framework in Frameworks */,
 				17B2581C17BD9C87007F9A9A /* Foundation.framework in Frameworks */,
 				17B2581E17BD9C87007F9A9A /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +76,7 @@
 		17B2581817BD9C87007F9A9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				176E43EF17C95ABA004CB040 /* QuartzCore.framework */,
 				17B2581917BD9C87007F9A9A /* UIKit.framework */,
 				17B2581B17BD9C87007F9A9A /* Foundation.framework */,
 				17B2581D17BD9C87007F9A9A /* CoreGraphics.framework */,
@@ -83,8 +87,6 @@
 		17B2581F17BD9C87007F9A9A /* Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
-				17B2582817BD9C88007F9A9A /* WatchAppDelegate.h */,
-				17B2582917BD9C88007F9A9A /* WatchAppDelegate.m */,
 				17B2583117BD9C88007F9A9A /* MainStoryboard.storyboard */,
 				17B2583417BD9C88007F9A9A /* WatchViewController.h */,
 				17B2583517BD9C88007F9A9A /* WatchViewController.m */,
@@ -96,6 +98,8 @@
 		17B2582017BD9C87007F9A9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				17B2582817BD9C88007F9A9A /* WatchAppDelegate.h */,
+				17B2582917BD9C88007F9A9A /* WatchAppDelegate.m */,
 				17B2582117BD9C87007F9A9A /* Stopwatch-Info.plist */,
 				17B2582217BD9C87007F9A9A /* InfoPlist.strings */,
 				17B2582517BD9C88007F9A9A /* main.m */,
@@ -299,6 +303,7 @@
 				17B2583B17BD9C88007F9A9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
