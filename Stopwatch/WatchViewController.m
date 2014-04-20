@@ -6,8 +6,40 @@
 //  Copyright (c) 2013 Jason Berk. All rights reserved.
 //
 
+
+
+
+/*
+-Is there a way to make the tableview auto scroll down when a new lap is added beneath the bottom?
+ 
+Best times design:
+ -lists = course names, accessed by drop down menu (with "new course" option).
+ -saved laps colored blue, very best time on course colored green
+ -laps have date stamps and can have tags for details. 
+ 
+ -tap saved laps to access tag / send-to-list menu
+ -"Star" laps to save them, will not be cleared when hit clear.
+    OR
+ -tap unsaved laps to replace lap label with "Save / Cancel"
+ -tap saved laps to replace lap label with "Add tag / Send to list / Unsave"
+
+ 
+ Implementation:
+ -will need to use didSelectRowAtIndexPath (kind of like an action?)
+    -upon tap, save contents (the lap time is stored in an array that is about to be modified [I think])
+    -upon tap, load appropriate buttons with [cell.contentView addSubview:theButton]
+ 
+ 
+ -Will need a new array for each list (and an array of these arrays)
+ 
+ 
+ */
+
+
+
 #import "WatchViewController.h"
 #import <QuartzCore/QuartzCore.h>
+
 NSString *StopwatchStringFromTimeInterval(NSTimeInterval timeInterval) {
     int hourCount = (int)timeInterval / 3600;
     timeInterval -= hourCount * 3600;
@@ -20,11 +52,6 @@ NSString *StopwatchStringFromTimeInterval(NSTimeInterval timeInterval) {
     return timeString;
 }
 
-//Is there a way to make the tableview auto scroll down when a new lap is added beneath the bottom?
-//Center cell text or change size?
-//change color of tableView?
-
-//Worth pausing display link while user stops count?
 
 @interface WatchViewController ()
 @property NSMutableArray *lapTimes;
@@ -123,6 +150,12 @@ NSTimeInterval stopCount = 0;
 
 
 
+
+
+
+
+
+
 // LAPS TABLE:
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -133,10 +166,20 @@ NSTimeInterval stopCount = 0;
 {
     // Table view: "What should I show at (3,5) ?"
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Lap Cell"];  //get cell from here
+    
     // Configure the cell for indexPath
     cell.textLabel.text = self.lapTimes[[indexPath row]];
     return cell;
 }
+
+
+
+
+
+
+
+
+
 
 
 
