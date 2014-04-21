@@ -121,6 +121,7 @@ NSTimeInterval stopCount = 0;
         //Lap button hit
         [self.lapTimes addObject:StopwatchStringFromTimeInterval(timeCount)];
         [self.lapsTable reloadData];
+        [self scrollToLastRow];
         //create TableViewCell and print (timeCount or timeCountLabel.text? Should be the same)
     }
 
@@ -168,16 +169,16 @@ NSTimeInterval stopCount = 0;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Lap Cell"];  //get cell from here
     
     // Configure the cell for indexPath
-    cell.textLabel.text = self.lapTimes[[indexPath row]];
+    cell.textLabel.text = self.lapTimes[indexPath.row];
     return cell;
 }
 
 
 
-
-
-
-
+-(void)scrollToLastRow {
+    NSIndexPath *bottomCell = [NSIndexPath indexPathForRow:(self.lapTimes.count - 1) inSection:0];
+    [self.lapsTable scrollToRowAtIndexPath:bottomCell atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
 
 
 
