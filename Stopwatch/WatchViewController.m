@@ -59,18 +59,19 @@ NSString *StopwatchStringFromTimeInterval(NSTimeInterval timeInterval) {
 
 
 
-@implementation WatchViewController
+@implementation WatchViewController{
+
 
 
 
 // VARIABLES:               //use properties instead?
-BOOL runTimer = NO;
-BOOL firstStart = YES;
-NSDate *startTime;
-NSDate *stopTime;
-NSTimeInterval timeCount = 0;
-NSTimeInterval stopCount = 0;
-
+    BOOL runTimer;
+    BOOL firstStart;
+    NSDate *startTime;
+    NSDate *stopTime;;
+    NSTimeInterval timeCount;
+    NSTimeInterval stopCount;
+}
 
 
 // USER ACTIONS:
@@ -196,6 +197,18 @@ NSTimeInterval stopCount = 0;
     //self.lapsTableCell.textLabel.textColor = [UIColor whiteColor];
     //self.lapsTableCell.backgroundColor = [UIColor blackColor];
 
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self == nil) {
+        return nil;
+    }
+    runTimer = NO;      //0 by defualt by anyway
+    firstStart = YES;
+    timeCount = 0;      //0 by defualt by anyway
+    stopCount = 0;      //0 by defualt by anyway
+    return self;
 }
 
 
